@@ -25,12 +25,15 @@ class TextProcessor:
         print 'removing stopwords'
         self.stopword.feed(self.buffer)
         self.buffer = self.stopword.get_output()
+        print self.buffer
 
     def stem(self):
         print 'stemming'
         result = []
         for word in self.buffer:
-            result.append(self.stemmer.stem(word, 0, len(word)-1))
+            stemmed = self.stemmer.stem(word, 0, len(word)-1)
+            result.append(stemmed)
+        self.buffer = result
 
     def process(self):
         self.tokenize()
