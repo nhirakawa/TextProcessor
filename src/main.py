@@ -12,6 +12,5 @@ def main():
     textproc.process()
     print textproc.get_output()
 
-
 if __name__ == '__main__':
     main()
