@@ -18,8 +18,9 @@ class Tokenizer:
 
     def tokenize(self):
         self.text = self.text.replace('.', '') #removes periods
-        self.tokens = re.split('\W+', self.text) #tokenize all words and remove whitespace and punctuation
-        self.tokens = [x.lower() for x in re.split('\W+', self.text) if x] #split text on whitespace and punctuation, also remove empty string
+        self.tokens = [x.lower() for x in re.split('[^a-zA-Z0-9]+', self.text) if x] #split text on whitespace and punctuation, also remove empty string
+        print 'tokens:'
+        print self.tokens
 
     def get_tokens(self):
         result = self.tokens
