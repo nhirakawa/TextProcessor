@@ -32,6 +32,7 @@ class TextProcessor:
         result = []
         for word in self.buffer:
             stemmed = self.stemmer.stem(word, 0, len(word)-1)
+            print "%s => %s" % (word, stemmed)
             result.append(stemmed)
         self.buffer = result
 
@@ -46,5 +47,8 @@ class TextProcessor:
         return result
 
     def readlines(self):
+        print 'reading file'
         with open(self.file, 'r') as f:
-            return ''.join(f.readlines())
+            text = ''.join(f.readlines())
+            print 'read lines:\n%s' % text
+            return text
