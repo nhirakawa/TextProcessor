@@ -1,4 +1,5 @@
-
+# modified from http://tartarus.org/martin/PorterStemmer/python.txt
+# implementation written by Vivake Gupta
 import string
 import re
 import sys
