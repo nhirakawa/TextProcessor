@@ -1,4 +1,3 @@
-__author__ = 'Nick Hirakawa'
 
 import string
 import re
